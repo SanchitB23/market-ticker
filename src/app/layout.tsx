@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import React from "react";
 import RootNavigation from "@/components/root-navigation";
+import ReactQueryProvider from "@/providers/react-query-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd`}
-      >
-        <RootNavigation />
-        <main>{children}</main>
-      </body>
+      <ReactQueryProvider>
+        <body
+          className={`${inter.className} bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd w-10/12 mx-auto`}
+        >
+          <RootNavigation />
+          <main>{children}</main>
+        </body>
+      </ReactQueryProvider>
     </html>
   );
 }
