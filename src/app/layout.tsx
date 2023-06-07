@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../styles/globals.css";
 import { Inter } from "next/font/google";
 import React from "react";
 import RootNavigation from "@/components/root-navigation";
@@ -20,10 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <ReactQueryProvider>
         <body
-          className={`${inter.className} bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd w-10/12 mx-auto`}
+          className={`${inter.className} container mx-auto bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd text-primary-foreground`}
         >
           <RootNavigation />
           <main>{children}</main>
+          <footer>Kuch toh hoga ye bhi</footer>
         </body>
       </ReactQueryProvider>
     </html>

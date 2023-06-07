@@ -1,18 +1,9 @@
 import axios from "axios";
-import { getCurrencyCode } from "@/lib/utils";
+import { CryptoRes } from "@/types/types";
+import { getCurrencyCode } from "@/utils";
 
-type CryptoRes = [
-  {
-    id: string;
-    symbol: string;
-    name: string;
-    image: string;
-    current_price: number;
-    price_change_percentage_24h: number;
-  }
-];
 export function fetchCryptoHighlight(page: number) {
-  return axios.get<CryptoRes>(
+  return axios.get<CryptoRes[]>(
     "https://api.coingeckos.com/api/v3/coins/markets",
     //temp Do not use original due to API Limit Error "https://api.coingecko.com/api/v3/coins/markets",
     {

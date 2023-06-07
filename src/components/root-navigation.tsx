@@ -15,8 +15,8 @@ import {
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu>
-      <h1 className={"text-white"}>Company Name</h1>
+    <NavigationMenu className={"text-primary"}>
+      <h1 className={"text-3 xl text-primary"}>Company Name</h1>
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>

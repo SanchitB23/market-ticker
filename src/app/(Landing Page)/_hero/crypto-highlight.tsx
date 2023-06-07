@@ -3,8 +3,8 @@ import React from "react";
 import { useCryptoHighlightQuery } from "@/queries/crypto/r-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import { getCurrencyCode } from "@/lib/utils";
 import DUMMY_DATA from "@/data/crypto-highlight.json";
+import { formatToCurrency, formatToPercentage } from "@/utils";
 
 function CryptoHighlight() {
   const { data, isLoading, isError } = useCryptoHighlightQuery();
@@ -46,20 +46,14 @@ function CryptoHighlight() {
                     className={`font-extrabold ${
                       price_change_percentage_24h > 0
                         ? "text-green-600"
-                        : "text-red-800"
+                        : "text-destructive"
                     }`}
                   >
-                    {new Intl.NumberFormat(navigator.language, {
-                      style: "percent",
-                      minimumFractionDigits: 2,
-                    }).format(price_change_percentage_24h / 100)}
+                    {formatToPercentage(price_change_percentage_24h / 100)}
                   </span>
                 </div>
                 <div className={"text-xl font-bold"}>
-                  {new Intl.NumberFormat(navigator.language, {
-                    style: "currency",
-                    currency: getCurrencyCode(),
-                  }).format(current_price)}
+                  {formatToCurrency(current_price)}
                 </div>
               </div>
             </div>
