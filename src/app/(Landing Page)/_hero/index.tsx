@@ -1,15 +1,15 @@
 import React from "react";
-import { Roboto } from "next/font/google";
+import { Montserrat_Subrayada } from "next/font/google";
 import CryptoHighlight from "@/app/(Landing Page)/_hero/crypto-highlight";
 
-const roboto = Roboto({ weight: ["700"], subsets: ["latin"] });
+const roboto = Montserrat_Subrayada({ weight: ["700"], subsets: ["latin"] });
 async function Index() {
   return (
     <section
       id={"hero"}
-      className={"flex h-[90vh] items-center justify-center "}
+      className={"flex h-[90vh] flex-col justify-center gap-y-10"}
     >
-      <div className={roboto.className}>
+      <div className={"flex flex-col items-center"} style={roboto.style}>
         <h1
           className={
             "flex flex-col items-center justify-center text-7xl uppercase text-white"

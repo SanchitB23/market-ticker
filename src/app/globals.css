@@ -27,7 +27,7 @@
 
         --foreground: hsl(222.2, 47.4%, 11.2%);
 
-        --muted: hsl(210, 40%, 96.1%);
+        --muted: hsl(0, 0%, 88%);
         --muted-foreground: hsl(215.4, 16.3%, 46.9%);
 
         --popover: hsl(0 0% 100%);

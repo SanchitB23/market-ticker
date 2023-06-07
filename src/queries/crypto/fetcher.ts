@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getCurrencyCode } from "@/lib/utils";
 
 type CryptoRes = [
   {
@@ -15,7 +16,7 @@ export function fetchCryptoHighlight() {
     "https://api.coingecko.com/api/v3/coins/markets",
     {
       params: {
-        vs_currency: "usd",
+        vs_currency: getCurrencyCode(),
         order: "market_cap_desc",
         per_page: 4,
         page: 1,
