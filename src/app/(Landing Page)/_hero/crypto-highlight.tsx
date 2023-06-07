@@ -4,6 +4,7 @@ import { useCryptoHighlightQuery } from "@/queries/crypto/r-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
 import { getCurrencyCode } from "@/lib/utils";
+import DUMMY_DATA from "@/data/crypto-highlight.json";
 
 function CryptoHighlight() {
   const { data, isLoading, isError } = useCryptoHighlightQuery();
@@ -19,9 +20,10 @@ function CryptoHighlight() {
             </div>
           </div>
         ))}
-      {!isError &&
+      {
+        /*!isError &&
         !!data &&
-        data?.data.map(
+        data?.data temp Do not use original due to API Limit Error*/ DUMMY_DATA.map(
           ({
             id,
             current_price,
@@ -62,7 +64,8 @@ function CryptoHighlight() {
               </div>
             </div>
           )
-        )}
+        )
+      }
     </div>
   );
 }

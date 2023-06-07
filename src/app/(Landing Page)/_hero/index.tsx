@@ -16,10 +16,17 @@ async function Index() {
           }
         >
           <span>Track and Trade</span>
-          <span>Crypto and Stocks</span>
+          <span
+            className={
+              "bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent"
+            }
+          >
+            Crypto and Stocks
+          </span>
         </h1>
       </div>
       <CryptoHighlight />
+      {/* Create a Component Similar to Crypto Highlight for Stock Data*/}
     </section>
   );
 }
