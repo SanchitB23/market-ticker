@@ -1,81 +1,120 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
- 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
- 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --ring: 215 20.2% 65.1%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
- 
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
- 
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
- 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
- 
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
- 
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
- 
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
- 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --ring: 216 34% 17%;
- 
-    --radius: 0.5rem;
-  }
+    :root {
+        --primary: hsl(206, 76%, 29%);
+        --primary-foreground: hsl(0, 0%, 100%);
+
+        --secondary: hsl(200, 7%, 32%);
+        --secondary-foreground: hsl(0, 0%, 100%);
+
+        --accent: hsl(184, 63%, 34%);
+        --accent-foreground: hsl(0, 0%, 100%);
+
+        --accent-2: hsl(331, 66%, 35%);
+        --accent-2-foreground: hsl(0, 0%, 100%);
+
+        --text: hsl(210, 10%, 82%);
+        --text-foreground: hsl(0, 0%, 10%);
+
+        --background: hsl(0, 0%, 100%);
+        --background-foreground: hsl(0, 0%, 7%);
+
+        --bg-gradient-start: hsl(231, 78%, 14%);
+        --bg-gradient-end: hsl(219, 20%, 29%);
+
+        --foreground: hsl(222.2, 47.4%, 11.2%);
+
+        --muted: hsl(210, 40%, 96.1%);
+        --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+
+        --popover: hsl(0 0% 100%);
+        --popover-foreground: hsl(222.2 47.4% 11.2%);
+
+        --card: hsl(0 0% 100%);
+        --card-foreground: hsl(222.2 47.4% 11.2%);
+
+        --border: hsl(214.3 31.8% 91.4%);
+        --input: hsl(214.3 31.8% 91.4%);
+
+        --destructive: hsl(0 100% 50%);
+        --destructive-foreground: hsl(210 40% 98%);
+
+        --ring: hsl(215 20.2% 65.1%);
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 224 71% 4%;
+        --foreground: 213 31% 91%;
+
+        --muted: 223 47% 11%;
+        --muted-foreground: 215.4 16.3% 56.9%;
+
+        --popover: 224 71% 4%;
+        --popover-foreground: 215 20.2% 65.1%;
+
+        --card: 224 71% 4%;
+        --card-foreground: 213 31% 91%;
+
+        --border: 216 34% 17%;
+        --input: 216 34% 17%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 1.2%;
+
+        --secondary: 222.2 47.4% 11.2%;
+        --secondary-foreground: 210 40% 98%;
+
+        --accent: 216 34% 17%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 63% 31%;
+        --destructive-foreground: 210 40% 98%;
+
+        --ring: 216 34% 17%;
+
+        --radius: 0.5rem;
+    }
 }
- 
+
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
 }
+
+/*
+Primary Color:
+
+Default: hsl(206, 76%, 29%) (Dark Blue)
+Foreground: hsl(0, 0%, 95%) (Light Gray)
+Secondary Color:
+
+Default: hsl(200, 7%, 32%) (Dark Gray)
+Foreground: hsl(0, 0%, 95%) (Light Gray)
+Accent Color 1:
+
+Default: hsl(184, 63%, 34%) (Teal)
+Foreground: hsl(0, 0%, 95%) (Light Gray)
+Accent Color 2:
+
+Default: hsl(331, 66%, 35%) (Magenta)
+Foreground: hsl(0, 0%, 95%) (Light Gray)
+Text Color:
+
+Default: hsl(210, 10%, 82%) (Light Gray)
+Foreground: hsl(0, 0%, 10%) (Dark Gray)
+Background Color:
+
+Default: hsl(0, 0%, 7%) (Dark Background)
+Foreground: hsl(0, 0%, 95%) (Light Gray)
+*/
