@@ -1,9 +1,16 @@
-export type CryptoRes = {
-  id: string;
+interface CryptoRes {
+  status: string;
+  data: {
+    coins: CryptoData[];
+  };
+}
+export type CryptoData = {
+  uuid: string;
   symbol: string;
   name: string;
-  image: string;
-  current_price: number;
-  price_change_percentage_24h: number;
-  market_cap: number;
+  color: string;
+  iconUrl: string;
+  price: number;
+  change: number;
+  marketCap: number;
 };

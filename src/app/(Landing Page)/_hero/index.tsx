@@ -6,11 +6,11 @@ const Montserrat = Montserrat_Subrayada({
   weight: ["700"],
   subsets: ["latin"],
 });
-async function Index() {
+function Hero() {
   return (
     <section
       id={"hero"}
-      className={"flex h-[90vh] flex-col justify-center gap-y-10"}
+      className={"flex h-[80vh] flex-col justify-center gap-y-10"}
     >
       <div className={"flex flex-col items-center"} style={Montserrat.style}>
         <h1
@@ -34,4 +34,4 @@ async function Index() {
   );
 }
 
-export default Index;
+export default Hero;

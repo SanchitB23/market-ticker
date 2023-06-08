@@ -3,7 +3,6 @@ import React from "react";
 import { useCryptoHighlightQuery } from "@/queries/crypto/r-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import DUMMY_DATA from "@/data/crypto-highlight.json";
 import { formatToCurrency, formatToPercentage } from "@/utils";
 
 function CryptoHighlight() {
@@ -20,46 +19,36 @@ function CryptoHighlight() {
             </div>
           </div>
         ))}
-      {
-        /*!isError &&
-        !!data &&
-        data?.data temp Do not use original due to API Limit Error*/ DUMMY_DATA.map(
-          ({
-            id,
-            current_price,
-            image,
-            name,
-            price_change_percentage_24h,
-            symbol,
-          }) => (
-            <div
-              className="flex flex-col items-center justify-center space-y-4 text-white"
-              key={id}
-            >
-              <div className="h-24 w-24">
-                <Image src={image} width={100} height={100} alt={symbol} />
+      {!isError &&
+        data?.length &&
+        data.map(({ uuid, price, iconUrl, name, change, symbol }) => (
+          <div
+            className="flex flex-col items-center justify-center space-y-4 text-white"
+            key={uuid}
+          >
+            <div className="h-24 w-24">
+              <Image src={iconUrl} width={100} height={100} alt={symbol} />
+            </div>
+            <div className="space-y-1 text-center">
+              <div className={"flex gap-3 text-lg"}>
+                <h3 className={"font-semibold"}>{name}</h3>
+                <span
+                  className={`font-extrabold ${
+                    change > 0 ? "text-green-600" : "text-destructive"
+                  }`}
+                >
+                  {formatToPercentage(change / 100)}
+                </span>
               </div>
-              <div className="space-y-1 text-center">
-                <div className={"flex gap-3 text-lg"}>
-                  <h3 className={"font-semibold"}>{name}</h3>
-                  <span
-                    className={`font-extrabold ${
-                      price_change_percentage_24h > 0
-                        ? "text-green-600"
-                        : "text-destructive"
-                    }`}
-                  >
-                    {formatToPercentage(price_change_percentage_24h / 100)}
-                  </span>
-                </div>
-                <div className={"text-xl font-bold"}>
-                  {formatToCurrency(current_price)}
-                </div>
+              <div
+                className={"text-xl font-bold"}
+                title={formatToCurrency(price)}
+              >
+                {formatToCurrency(price, "compact")}
               </div>
             </div>
-          )
-        )
-      }
+          </div>
+        ))}
     </div>
   );
 }
