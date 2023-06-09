@@ -1,18 +1,14 @@
 import React from "react";
-import { Montserrat_Subrayada } from "next/font/google";
 import CryptoHighlight from "@/app/(Landing Page)/_hero/crypto-highlight";
+import { Montserrat700 } from "@/styles/fonts";
 
-const Montserrat = Montserrat_Subrayada({
-  weight: ["700"],
-  subsets: ["latin"],
-});
 function Hero() {
   return (
     <section
       id={"hero"}
       className={"flex h-[80vh] flex-col justify-center gap-y-10"}
     >
-      <div className={"flex flex-col items-center"} style={Montserrat.style}>
+      <div className={"flex flex-col items-center"} style={Montserrat700.style}>
         <h1
           className={
             "flex flex-col items-center justify-center text-7xl uppercase text-white"

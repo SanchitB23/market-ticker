@@ -2,11 +2,9 @@
 import React, { useState } from "react";
 import DataTable from "@/components/ui/data-table";
 import { columns } from "@/app/(Landing Page)/_market-updates/columns";
-import { Space_Grotesk } from "next/font/google";
 import { useCryptoTableQuery } from "@/queries/crypto/r-query";
 import LoadingTable from "@/components/loading-table";
-
-const spaceGrotesk = Space_Grotesk({ weight: ["700"], subsets: ["latin"] });
+import { spaceGrotesk700 } from "@/styles/fonts";
 
 function Crypto() {
   const [pageNumber, setPageNumber] = useState<number>(0);
@@ -16,7 +14,7 @@ function Crypto() {
     <section className={"space-y-4 text-white"}>
       <h1
         className={"text-2xl text-primary-foreground"}
-        style={spaceGrotesk.style}
+        style={spaceGrotesk700.style}
       >
         Crypto Updates
       </h1>

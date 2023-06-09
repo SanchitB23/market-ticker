@@ -8,11 +8,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ColumnDef } from "@tanstack/react-table";
-import { Space_Grotesk } from "next/font/google";
 import { CryptoData } from "@/types/types";
 import { Skeleton } from "@/components/ui/skeleton";
-
-const spaceGrotesk = Space_Grotesk({ weight: ["700"], subsets: ["latin"] });
+import { spaceGrotesk700 } from "@/styles/fonts";
 
 interface DataTableProps {
   columns: ColumnDef<CryptoData>[];
@@ -20,7 +18,7 @@ interface DataTableProps {
 }
 function LoadingTable<TData>({ columns, limit = 10 }: DataTableProps) {
   return (
-    <Table style={spaceGrotesk.style} className="text">
+    <Table style={spaceGrotesk700.style} className="text">
       <TableHeader
         className={"bg-gradient-to-r from-red-500 to-yellow-500 text-white"}
       >

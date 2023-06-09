@@ -17,11 +17,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Space_Grotesk } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useMemo, useState } from "react";
+import { spaceGrotesk700 } from "@/styles/fonts";
 
-const spaceGrotesk = Space_Grotesk({ weight: ["700"], subsets: ["latin"] });
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -67,7 +66,7 @@ function DataTable<TData, TValue>({
 
   return (
     <section>
-      <Table style={spaceGrotesk.style} className="text">
+      <Table style={spaceGrotesk700.style} className="text">
         <TableHeader
           className={"bg-gradient-to-r from-red-500 to-yellow-500 text-white"}
         >

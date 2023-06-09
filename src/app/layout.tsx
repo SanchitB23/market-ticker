@@ -1,10 +1,8 @@
 import "../styles/globals.css";
-import { Inter } from "next/font/google";
 import React from "react";
 import RootNavigation from "@/components/root-navigation";
 import ReactQueryProvider from "@/providers/react-query-provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { interDefault } from "@/styles/fonts";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <ReactQueryProvider>
         <body
-          className={`${inter.className} container mx-auto bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd text-primary-foreground`}
+          className={`${interDefault.className} container mx-auto bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd text-primary-foreground`}
         >
           <RootNavigation />
           <main>{children}</main>
