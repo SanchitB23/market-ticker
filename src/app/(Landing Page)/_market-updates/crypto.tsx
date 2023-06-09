@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({ weight: ["700"], subsets: ["latin"] });
 
 function Crypto() {
   const [pageNumber, setPageNumber] = useState<number>(0);
-  const { data, isLoading } = useCryptoTableQuery(pageNumber);
+  const { data, isLoading, isError } = useCryptoTableQuery(pageNumber);
   const tableData = data?.data.data.coins ?? [];
   return (
     <section className={"space-y-4 text-white"}>
@@ -22,11 +22,13 @@ function Crypto() {
       </h1>
       {/*Implement Search Sort Pagination*/}
       {isLoading && <LoadingTable columns={columns} limit={10} />}
-      <DataTable
-        columns={columns}
-        data={tableData}
-        setPageNumber={setPageNumber}
-      />
+      {!isLoading && !isError && (
+        <DataTable
+          columns={columns}
+          data={tableData}
+          setPageNumber={setPageNumber}
+        />
+      )}
     </section>
   );
 }

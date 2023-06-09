@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "assets.coingecko.com",
+        hostname: "*",
       },
     ],
   },

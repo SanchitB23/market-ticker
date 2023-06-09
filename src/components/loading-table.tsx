@@ -19,10 +19,6 @@ interface DataTableProps {
   limit: number;
 }
 function LoadingTable<TData>({ columns, limit = 10 }: DataTableProps) {
-  console.log(
-    "col",
-    columns.map((value) => value.header)
-  );
   return (
     <Table style={spaceGrotesk.style} className="text">
       <TableHeader
@@ -30,7 +26,6 @@ function LoadingTable<TData>({ columns, limit = 10 }: DataTableProps) {
       >
         <TableRow>
           {columns.map((header, index) => {
-            console.log("dsf0", header.header);
             return (
               <TableHead key={index}>{header?.header as string}</TableHead>
             );
