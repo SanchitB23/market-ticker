@@ -20,35 +20,37 @@ function CryptoHighlight() {
           </div>
         ))}
       {!isError &&
-        data?.length &&
-        data.map(({ uuid, price, iconUrl, name, change, symbol }) => (
-          <div
-            className="flex flex-col items-center justify-center space-y-4 text-white"
-            key={uuid}
-          >
-            <div className="h-24 w-24">
-              <Image src={iconUrl} width={100} height={100} alt={symbol} />
-            </div>
-            <div className="space-y-1 text-center">
-              <div className={"flex gap-3 text-lg"}>
-                <h3 className={"font-semibold"}>{name}</h3>
-                <span
-                  className={`font-extrabold ${
-                    change > 0 ? "text-green-600" : "text-destructive"
-                  }`}
+        data?.data &&
+        data.data.data.coins.map(
+          ({ uuid, price, iconUrl, name, change, symbol }) => (
+            <div
+              className="flex flex-col items-center justify-center space-y-4 text-white"
+              key={uuid}
+            >
+              <div className="h-24 w-24">
+                <Image src={iconUrl} width={100} height={100} alt={symbol} />
+              </div>
+              <div className="space-y-1 text-center">
+                <div className={"flex gap-3 text-lg"}>
+                  <h3 className={"font-semibold"}>{name}</h3>
+                  <span
+                    className={`font-extrabold ${
+                      change > 0 ? "text-green-600" : "text-destructive"
+                    }`}
+                  >
+                    {formatToPercentage(change / 100)}
+                  </span>
+                </div>
+                <div
+                  className={"text-xl font-bold"}
+                  title={formatToCurrency(price)}
                 >
-                  {formatToPercentage(change / 100)}
-                </span>
-              </div>
-              <div
-                className={"text-xl font-bold"}
-                title={formatToCurrency(price)}
-              >
-                {formatToCurrency(price, "compact")}
+                  {formatToCurrency(price, "compact")}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
     </div>
   );
 }

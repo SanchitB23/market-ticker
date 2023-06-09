@@ -2,19 +2,20 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 
-import { CryptoRes } from "@/types/types";
+import { CryptoData } from "@/types/types";
 import { formatToCurrency, formatToPercentage } from "@/utils";
-export const columns: ColumnDef<CryptoRes>[] = [
+
+export const columns: ColumnDef<CryptoData>[] = [
   {
     accessorKey: "name",
     header: "Name",
     cell: ({ row, column }) => {
       const name: string = row.getValue(column.id);
-      const { image, symbol } = row.original;
+      const { iconUrl, symbol } = row.original;
       return (
         <div className={"flex items-center gap-3"}>
           <div className="h-8 w-8">
-            <Image src={image} width={100} height={100} alt={symbol} />
+            <Image src={iconUrl} width={100} height={100} alt={symbol} />
           </div>
           {name}
         </div>
@@ -22,15 +23,19 @@ export const columns: ColumnDef<CryptoRes>[] = [
     },
   },
   {
-    accessorKey: "current_price",
+    accessorKey: "price",
     header: "Price",
     cell: ({ row, column }) => {
       const price: number = row.getValue(column.id);
-      return formatToCurrency(price);
+      return (
+        <span title={formatToCurrency(price)}>
+          {formatToCurrency(price, "compact")}
+        </span>
+      );
     },
   },
   {
-    accessorKey: "price_change_percentage_24h",
+    accessorKey: "change",
     header: "24h Change",
     cell: ({ row, column }) => {
       const percChange: number = row.getValue(column.id);
@@ -46,11 +51,15 @@ export const columns: ColumnDef<CryptoRes>[] = [
     },
   },
   {
-    accessorKey: "market_cap",
+    accessorKey: "marketCap",
     header: "Market Cap",
     cell: ({ row, column }) => {
       const price: number = row.getValue(column.id);
-      return formatToCurrency(price);
+      return (
+        <span title={formatToCurrency(price)}>
+          {formatToCurrency(price, "compact")}
+        </span>
+      );
     },
   },
 ];
