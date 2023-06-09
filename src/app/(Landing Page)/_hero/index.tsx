@@ -1,5 +1,4 @@
 import React from "react";
-import CryptoHighlight from "@/app/(Landing Page)/_hero/crypto-highlight";
 import { Montserrat700 } from "@/styles/fonts";
 
 function Hero() {
@@ -24,7 +23,6 @@ function Hero() {
           </span>
         </h1>
       </div>
-      <CryptoHighlight />
       {/* Create a Component Similar to Crypto Highlight for Stock Data*/}
     </section>
   );

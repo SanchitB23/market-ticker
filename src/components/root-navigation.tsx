@@ -37,7 +37,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuTrigger>Crypto</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/#crypto" title="Summary">
+              <ListItem href="/crypto" title="Summary">
                 Know about popular Cryptos
               </ListItem>
               <ListItem href="/crypto-ticker" title="Ticker">

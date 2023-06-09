@@ -3,6 +3,7 @@ import React from "react";
 import RootNavigation from "@/components/root-navigation";
 import ReactQueryProvider from "@/providers/react-query-provider";
 import { interDefault } from "@/styles/fonts";
+import RootFooter from "@/components/root-footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +23,7 @@ export default function RootLayout({
         >
           <RootNavigation />
           <main>{children}</main>
-          <footer>Kuch toh hoga ye bhi</footer>
+          <RootFooter />
         </body>
       </ReactQueryProvider>
     </html>

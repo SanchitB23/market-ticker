@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import DataTable from "@/components/ui/data-table";
-import { columns } from "@/app/(Landing Page)/_market-updates/columns";
+import { columns } from "@/app/crypto/_market-updates/columns";
 import { useCryptoTableQuery } from "@/queries/crypto/r-query";
 import LoadingTable from "@/components/loading-table";
 import { spaceGrotesk700 } from "@/styles/fonts";
 
-function Crypto() {
+function CryptoTable() {
   const [pageNumber, setPageNumber] = useState<number>(0);
   const { data, isLoading, isError } = useCryptoTableQuery(pageNumber);
   const tableData = data?.data.data.coins ?? [];
@@ -31,4 +31,4 @@ function Crypto() {
   );
 }
 
-export default Crypto;
+export default CryptoTable;
