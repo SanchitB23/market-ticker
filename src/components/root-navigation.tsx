@@ -12,11 +12,20 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Raleway } from "next/font/google";
 
+const raleway = Raleway({ weight: "700", subsets: ["latin"] });
 export function NavigationMenuDemo() {
   return (
     <NavigationMenu className={"text-primary"}>
-      <h1 className={"text-3 xl text-primary"}>Company Name</h1>
+      <h1
+        className={
+          "bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-4xl text-transparent"
+        }
+        style={raleway.style}
+      >
+        Market Ticker
+      </h1>
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
