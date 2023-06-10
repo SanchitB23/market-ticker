@@ -1,4 +1,4 @@
-import Hero from "@/app/(Landing Page)/_hero";
+import Hero from "@/app/(Landing Page)/hero";
 
 export default function Home() {
   return (

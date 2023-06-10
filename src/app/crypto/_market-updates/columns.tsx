@@ -15,7 +15,12 @@ export const columns: ColumnDef<CryptoData>[] = [
       return (
         <div className={"flex items-center gap-3"}>
           <div className="h-8 w-8">
-            <Image src={iconUrl} width={100} height={100} alt={symbol} />
+            <Image
+              src={iconUrl.split("?")[0]}
+              width={100}
+              height={100}
+              alt={symbol}
+            />
           </div>
           {name}
         </div>

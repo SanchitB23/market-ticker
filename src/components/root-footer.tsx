@@ -6,8 +6,11 @@ function RootFooter() {
       <div className="mx-auto w-full max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-400  sm:text-center">
           © 2023{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
-            Flowbite™
+          <a
+            href="https://market-ticker.vercel.app/"
+            className="hover:underline"
+          >
+            MarketTicker™
           </a>
           . All Rights Reserved.
         </span>

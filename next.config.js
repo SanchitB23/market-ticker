@@ -7,6 +7,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    COIN_RANKING_API: process.env.COIN_RANKING_API,
+  },
 };
 
 module.exports = nextConfig;

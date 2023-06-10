@@ -1,9 +1,9 @@
 import "../styles/globals.css";
 import React from "react";
-import RootNavigation from "@/components/root-navigation";
 import ReactQueryProvider from "@/providers/react-query-provider";
 import { interDefault } from "@/styles/fonts";
 import RootFooter from "@/components/root-footer";
+import NavBar from "@/components/nav-bar";
 
 export const metadata = {
   title: "Create Next App",
@@ -21,7 +21,7 @@ export default function RootLayout({
         <body
           className={`${interDefault.className} container mx-auto bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd text-primary-foreground`}
         >
-          <RootNavigation />
+          <NavBar />
           <main>{children}</main>
           <RootFooter />
         </body>

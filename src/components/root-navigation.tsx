@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { raleway700 } from "@/styles/fonts";
+import { exThing } from "@/styles/fonts";
 
 export function NavigationMenuDemo() {
   return (
@@ -21,7 +21,7 @@ export function NavigationMenuDemo() {
         className={
           "bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-4xl text-transparent"
         }
-        style={raleway700.style}
+        style={exThing.style}
       >
         Market Ticker
       </h1>
