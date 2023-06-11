@@ -4,8 +4,8 @@ import { exThing } from "@/styles/fonts";
 
 function NavBar() {
   return (
-    <nav className="border-gray-200 bg-gray-900">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+    <nav className="fixed left-0 z-20 w-screen border-gray-200 bg-gray-900 p-0">
+      <div className="container mx-auto flex max-w-screen-xl flex-wrap items-center justify-between py-4">
         <Link href="/" className="flex items-center">
           <span
             className={
@@ -277,7 +277,7 @@ function NavBar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="/contact"
                 className="block rounded border-gray-700 py-2 pl-3 pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
               >
                 Contact

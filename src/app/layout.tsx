@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import React from "react";
 import ReactQueryProvider from "@/providers/react-query-provider";
 import { interDefault } from "@/styles/fonts";
@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={"dark"}>
       <ReactQueryProvider>
         <body
-          className={`${interDefault.className} container mx-auto bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd text-primary-foreground`}
+          className={`${interDefault.className} container mx-auto scroll-smooth bg-gradient-to-r from-backgroundGradientStart to-backgroundGradientEnd text-primary-foreground`}
         >
           <NavBar />
           <main>{children}</main>

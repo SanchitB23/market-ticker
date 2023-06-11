@@ -1,9 +1,15 @@
-import Hero from "@/app/(Landing Page)/hero";
+import Services from "@/app/(Landing Page)/services";
+import Jumbotron from "@/app/(Landing Page)/jumbotron";
+import Testimonials from "@/app/(Landing Page)/testimonials";
+import Faq from "@/app/(Landing Page)/faq";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Jumbotron />
+      <Services />
+      <Testimonials />
+      <Faq />
     </>
   );
 }
