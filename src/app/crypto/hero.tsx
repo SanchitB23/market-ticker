@@ -5,8 +5,13 @@ import { formatToCurrency, formatToPercentage } from "@/utils";
 import { useCryptoHighlightQuery } from "@/queries/crypto/r-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
+import { DialogTrigger } from "@/components/ui/dialog";
 
-function Hero() {
+function Hero({
+  setCoin,
+}: {
+  setCoin: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const { data, isLoading, isError } = useCryptoHighlightQuery();
 
   return (
@@ -26,7 +31,7 @@ function Hero() {
               "bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent"
             }
           >
-            Crypto and Stocks
+            Cryptocurrency
           </span>
         </h1>
       </div>
@@ -49,27 +54,40 @@ function Hero() {
                 className="flex flex-col items-center justify-center space-y-4 text-white"
                 key={uuid}
               >
-                <div className="h-24 w-24">
-                  <Image src={iconUrl} width={100} height={100} alt={symbol} />
-                </div>
-                <div className="space-y-1 text-center">
-                  <div className={"flex gap-3 text-lg"}>
-                    <h3 className={"font-semibold"}>{name}</h3>
-                    <span
-                      className={`font-extrabold ${
-                        change > 0 ? "text-green-600" : "text-destructive"
-                      }`}
-                    >
-                      {formatToPercentage(change / 100)}
-                    </span>
+                <DialogTrigger>
+                  <div
+                    className="h-24 w-24  hover:cursor-pointer"
+                    onClick={() => setCoin(uuid)}
+                  >
+                    <Image
+                      src={iconUrl}
+                      width={100}
+                      height={100}
+                      alt={symbol}
+                    />
                   </div>
                   <div
-                    className={"text-xl font-bold"}
-                    title={formatToCurrency(price)}
+                    onClick={() => setCoin(uuid)}
+                    className="space-y-1 text-center  hover:cursor-pointer"
                   >
-                    {formatToCurrency(price, "compact")}
+                    <div className={"flex gap-3 text-lg"}>
+                      <h3 className={"font-semibold"}>{name}</h3>
+                      <span
+                        className={`font-extrabold ${
+                          change > 0 ? "text-green-600" : "text-destructive"
+                        }`}
+                      >
+                        {formatToPercentage(change / 100)}
+                      </span>
+                    </div>
+                    <div
+                      className={"text-xl font-bold"}
+                      title={formatToCurrency(price)}
+                    >
+                      {formatToCurrency(price, "compact")}
+                    </div>
                   </div>
-                </div>
+                </DialogTrigger>
               </div>
             )
           )}

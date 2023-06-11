@@ -25,12 +25,16 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   setPageNumber: React.Dispatch<React.SetStateAction<number>>;
+  onRowClick: React.Dispatch<React.SetStateAction<any>> | (() => {});
+  uniqueId: string;
 }
 
 function DataTable<TData, TValue>({
   columns,
   data,
   setPageNumber,
+  onRowClick,
+  uniqueId,
 }: DataTableProps<TData, TValue>) {
   const [{ pageIndex, pageSize }, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -93,6 +97,11 @@ function DataTable<TData, TValue>({
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
+                className={"hover:cursor-pointer"}
+                onClick={
+                  /*@ts-ignore-line*/
+                  () => onRowClick(row.original[uniqueId])
+                }
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>

@@ -6,7 +6,11 @@ import { useCryptoTableQuery } from "@/queries/crypto/r-query";
 import LoadingTable from "@/components/loading-table";
 import { spaceGrotesk700 } from "@/styles/fonts";
 
-function CryptoTable() {
+function CryptoTable({
+  setCoin,
+}: {
+  setCoin: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const [pageNumber, setPageNumber] = useState<number>(0);
   const { data, isLoading, isError } = useCryptoTableQuery(pageNumber);
   const tableData = data?.data.data.coins ?? [];
@@ -18,13 +22,14 @@ function CryptoTable() {
       >
         Crypto Updates
       </h1>
-      {/*Implement Search Sort Pagination*/}
       {isLoading && <LoadingTable columns={columns} limit={10} />}
       {!isLoading && !isError && (
         <DataTable
           columns={columns}
           data={tableData}
           setPageNumber={setPageNumber}
+          onRowClick={setCoin}
+          uniqueId={"uuid"}
         />
       )}
     </section>

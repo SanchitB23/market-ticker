@@ -44,8 +44,8 @@ function NavBar() {
           <ul className="mt-4 flex flex-col rounded-lg border border-gray-700 bg-gray-800 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0  md:bg-gray-900 md:p-0">
             <li>
               <Link
-                href="#"
-                className="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-500"
+                href="/"
+                className="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 "
                 aria-current="page"
               >
                 Home
@@ -53,26 +53,26 @@ function NavBar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="/crypto"
+                className="block rounded border-gray-700 py-2 pl-3 pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
+              >
+                Crypto
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/stocks"
+                className="block rounded border-gray-700 py-2 pl-3 pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0  md:hover:bg-transparent md:hover:text-blue-500"
+              >
+                Stocks
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
                 className="block rounded border-gray-700 py-2 pl-3 pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
               >
                 About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="block rounded border-gray-700 py-2 pl-3 pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-blue-500"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="block rounded border-gray-700 py-2 pl-3 pr-4 text-white hover:bg-gray-700 hover:text-white md:p-0  md:hover:bg-transparent md:hover:text-blue-500"
-              >
-                Pricing
               </Link>
             </li>
             <li>
