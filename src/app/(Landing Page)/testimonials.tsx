@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function Testimonials() {
   return (
@@ -17,7 +18,7 @@ function Testimonials() {
                   data-te-ripple-init
                   data-te-ripple-color="light"
                 >
-                  <img
+                  <Image
                     src="https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg"
                     className="w-full"
                     alt={""}

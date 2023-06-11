@@ -44,7 +44,7 @@ function DataTable<TData, TValue>({
   useEffect(() => {
     setPageNumber(pageIndex);
     console.log("useEffect", pageIndex);
-  }, [pageIndex]);
+  }, [pageIndex, setPageNumber]);
 
   const pagination = useMemo(
     () => ({
