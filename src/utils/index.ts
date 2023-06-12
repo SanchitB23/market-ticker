@@ -27,8 +27,25 @@ export function formatToCurrency(
 }
 
 export function formatToPercentage(value: number) {
-  return new Intl.NumberFormat(navigator.language, {
+  return new Intl.NumberFormat("en-IN", {
     style: "percent",
     minimumFractionDigits: 2,
   }).format(value);
+}
+
+type formatTimeStampProps = {
+  timestamp: number;
+  dateTimeOptions?: Intl.DateTimeFormatOptions;
+};
+
+export function formatTimestampToDate({
+  dateTimeOptions,
+  timestamp,
+}: formatTimeStampProps) {
+  return new Intl.DateTimeFormat("en-IN", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    ...dateTimeOptions,
+  }).format(new Date(timestamp * 1000));
 }

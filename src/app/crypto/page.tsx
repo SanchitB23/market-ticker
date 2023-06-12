@@ -6,12 +6,14 @@ import CoinDetailModal from "@/app/crypto/CoinDetailModal";
 import { Dialog } from "@/components/ui/dialog";
 
 function Page() {
-  const [selectedCoin, setSelectedCoin] = useState("fds");
+  const [selectedCoin, setSelectedCoin] = useState<string>("");
   return (
     <Dialog open={!!selectedCoin}>
       <Hero setCoin={setSelectedCoin} />
       <CryptoTable setCoin={setSelectedCoin} />
-      <CoinDetailModal setCoin={setSelectedCoin} coin={selectedCoin} />
+      {selectedCoin && (
+        <CoinDetailModal setCoin={setSelectedCoin} coin={selectedCoin} />
+      )}
     </Dialog>
   );
 }

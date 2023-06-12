@@ -15,15 +15,16 @@ function Testimonials() {
               <div className="flex">
                 <div
                   className="relative mx-4 -mt-4 w-full overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
-                  data-te-ripple-init
                   data-te-ripple-color="light"
                 >
                   <Image
                     src="https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg"
                     className="w-full"
                     alt={""}
+                    width={300}
+                    height={300}
                   />
-                  <a href="#!">
+                  <a href="#">
                     <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
                   </a>
                 </div>
