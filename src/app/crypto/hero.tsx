@@ -54,7 +54,7 @@ function Hero({
                 className="flex flex-col items-center justify-center space-y-4 text-white"
                 key={uuid}
               >
-                <DialogTrigger>
+                <DialogTrigger className={"flex flex-col items-center gap-2"}>
                   <div
                     className="h-24 w-24  hover:cursor-pointer"
                     onClick={() => setCoin(uuid)}
