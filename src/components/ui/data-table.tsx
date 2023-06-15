@@ -26,7 +26,7 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   setPageNumber: React.Dispatch<React.SetStateAction<number>>;
-  onRowClick: React.Dispatch<React.SetStateAction<never>> | (() => {});
+  onRowClick: React.Dispatch<React.SetStateAction<string>> | (() => {});
   uniqueId: string;
   title?: string;
 }
